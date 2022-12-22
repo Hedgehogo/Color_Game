@@ -1,0 +1,17 @@
+type: cg::VictoryCatcher
+pause:
+  var: pause
+limit-type:
+  var: limit-type
+limit:
+  var: limit
+points:
+  var: points
+time:
+  var: time
+game:
+  type: file
+  file-path: ../example-resources/game.yaml
+victory-menu:
+  type: file
+  file-path: ../example-resources/victory-menu.yaml

@@ -1,0 +1,236 @@
+type: LWBa
+object:
+  type: cg::LayerWithConstCenter
+  object:
+    type: LWCBe
+    bezel:
+      type: RoundedRectangle
+      color: &white 4e4e4e
+      radius: 6
+    thickness: 1
+    object:
+      type: LWCBe
+      bezel:
+        type: RoundedRectangle
+        color: &black 2b2b2b
+        radius: 5
+      thickness: 5
+      object:
+        type: LWCB
+        const-object:
+          type: SL
+          normal-object-position:
+            var: text
+          object:
+            type: Text
+            text-block: Victory!
+            background:
+              type: Empty
+            font: ../example-resources/segoeui.ttf
+            size: 30
+            text-color: 98a5b2
+            coefficient: 0, 0.5
+        second-object:
+          type: LWCB
+          const-object:
+            type: cg::PointsDisplay
+            background:
+              type: Empty
+            color: &text-color 98a5b2
+            font: ../example-resources/segoeui.ttf
+            font-size: 20
+            coefficient: 0, 0.5
+            points: points
+            time: time
+          second-object:
+            type: LWCB
+            const-object:
+              type: LWCB
+              const-object:
+                type: Empty
+              second-object:
+                type: LWCB
+                const-object:
+                  type: SL
+                  normal-object-position:
+                    var: text
+                  object:
+                    type: Text
+                    text-block: "scale:"
+                    background:
+                      type: Empty
+                    font: ../example-resources/segoeui.ttf
+                    size: 15
+                    text-color: 98a5b2
+                    coefficient: 0, 0.5
+                second-object:
+                  type: LWAO
+                  bottom-object:
+                    type: LWCBe
+                    bezel:
+                      type: Empty
+                    object:
+                      type: Capsule
+                      color: &grey 323232
+                    thickness: 5
+                  top-object:
+                    type: ConstSlider
+                    slider: &slider
+                      type: Capsule
+                      color: *white
+                    background:
+                      type: Empty
+                    value:
+                      var: scale-vec
+                      x: scale
+                      y:
+                        var: scale-vec-y
+                    ratio: 1
+                side: left
+                border-distance: 50
+              side: up
+              border-distance: 20
+            second-object:
+              type: LWCB
+              const-object:
+                type: LWCB
+                const-object:
+                  type: SL
+                  normal-object-position:
+                    var: text
+                  object:
+                    type: Text
+                    text-block: "hue:"
+                    background:
+                      type: Empty
+                    font: ../example-resources/segoeui.ttf
+                    size: 15
+                    text-color: 98a5b2
+                    coefficient: 0, 0.5
+                second-object:
+                  type: LWAO
+                  bottom-object:
+                    type: LWCBe
+                    bezel:
+                      type: Empty
+                    object:
+                      type: Capsule
+                      color: &grey 323232
+                    thickness: 5
+                  top-object:
+                    type: ConstSlider
+                    slider: &slider
+                      type: Capsule
+                      color: *white
+                    background:
+                      type: Empty
+                    value:
+                      var: hue-vec
+                      x: hue
+                      y:
+                        var: hue-vec-y
+                    ratio: 1
+                side: left
+                border-distance: 50
+              second-object:
+                type: LWCB
+                const-object:
+                  type: LWCB
+                  const-object:
+                    type: Switch
+                    value: limit-type
+                    inactive-background:
+                      type: UL
+                      object:
+                        type: SL
+                        normal-object-position:
+                          var: text
+                        object:
+                          type: Text
+                          text-block: "score-limit:"
+                          background:
+                            type: Empty
+                          font: ../example-resources/segoeui.ttf
+                          size: 15
+                          text-color: 98a5b2
+                          coefficient: 0, 0.5
+                    active-background:
+                      type: UL
+                      object:
+                        type: SL
+                        normal-object-position:
+                          var: text
+                        object:
+                          type: Text
+                          text-block: "time-limit:"
+                          background:
+                            type: Empty
+                          font: ../example-resources/segoeui.ttf
+                          size: 15
+                          text-color: 98a5b2
+                          coefficient: 0, 0.5
+                  second-object:
+                    type: LWAO
+                    bottom-object:
+                      type: LWCBe
+                      bezel:
+                        type: Empty
+                      object:
+                        type: Capsule
+                        color: &grey 323232
+                      thickness: 5
+                    top-object:
+                      type: ConstSlider
+                      slider: *slider
+                      background:
+                        type: Empty
+                      value:
+                        var: limit-vec
+                        x: limit
+                        y:
+                          var: limit-vec-y
+                      ratio: 1
+                  side: left
+                  border-distance: 80
+                second-object:
+                  type: Button
+                  index: 0
+                  background:
+                    type: UL
+                    object:
+                      type: LWAO
+                      bottom-object:
+                        color: *grey
+                        radius: 5
+                      top-object:
+                        type: LWCBe
+                        bezel:
+                          type: Empty
+                        thickness: 5
+                        object:
+                          type: UL
+                          object:
+                            type: SL
+                            normal-object-position:
+                              var: text
+                            object:
+                              type: Text
+                              text-block: "Restart"
+                              background:
+                                type: Empty
+                              font: ../example-resources/segoeui.ttf
+                              size: 15
+                              text-color: 98a5b2
+                              coefficient: 0, 0.5
+                side: up
+                border-distance: 20
+              side: up
+              border-distance: 20
+            side: up
+            border-distance: 40
+          side: up
+          border-distance: 50
+        side: up
+        border-distance: 40
+  object-size: 212, 212
+background: 00000088

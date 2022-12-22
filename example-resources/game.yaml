@@ -1,0 +1,62 @@
+type: ButtonWithPanel
+panel:
+  object: &black 2b2b2b
+  hide-interaction:
+    type: DontHPI
+  sizing: 116, 46
+  positioning:
+    coefficient: 0.5, 0.5
+background:
+  type: ButtonWithPanel
+  panel:
+    object:
+      type: LWCBe
+      bezel:
+        type: RoundedRectangle
+        color: &white 4e4e4e
+        radius: 6
+      thickness: 1
+      object:
+        type: LWCBe
+        bezel:
+          type: RoundedRectangle
+          color: *black
+          radius: 5
+        thickness: 2
+        object:
+          type: cg::PointsDisplay
+          background:
+            type: Empty
+          color: &text-color 98a5b2
+          font: ../example-resources/segoeui.ttf
+          font-size: 14
+          coefficient: 0, 0.5
+          points: points
+          time: time
+    hide-interaction:
+      type: PointingHPI
+    move-interaction:
+      type: CoefficientMPI
+      coefficient: 1, 1
+      offset: 0, 0
+    sizing: 116, 46
+    positioning:
+      coefficient: 0, 0
+      offset: 5, 5
+  background:
+    type: cg::GameCustomizer
+    scale:
+      var: scale
+      level: 1
+    hue:
+      var: hue
+      level: 1
+    pause: pause
+    points: points
+    time: time
+    background: *black
+  display-interaction:
+    type: PointingDPI
+display-interaction:
+  type: ClickDPI
+  key: escape
